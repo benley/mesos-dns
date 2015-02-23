@@ -1,0 +1,27 @@
+Source: mesos-dns
+Section: admin
+Priority: optional
+Maintainer: Benjamin Staffin <ben@folsomlabs.com>
+Build-Depends: debhelper (>= 9),
+ golang-go,
+ dh-golang,
+ golang-dns-dev (>> 0.0~git20130912-1),
+Standards-Version: 3.9.5
+Homepage: https://github.com/mesosphere/mesos-dns
+#Vcs-Git: git://anonscm.debian.org/collab-maint/mesos-dns.git
+#Vcs-Browser: http://anonscm.debian.org/?p=collab-maint/mesos-dns.git;a=summary
+
+Package: mesos-dns
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: DNS-based service discovery for Mesos
+ Mesos-DNS supports service discovery in Apache Mesos clusters.
+ It allows applications and services running on Mesos to find each
+ other through the domain name system (DNS), similar to how
+ services discover each other throughout the Internet.
+ Applications launched by Marathon or Aurora are assigned names
+ like search.marathon.mesos or log-aggregator.aurora.mesos.
+ Mesos-DNS translates these names to the IP address and port on
+ the machine currently running each application. To connect to an
+ application in the Mesos datacenter, all you need to know is its
+ name.

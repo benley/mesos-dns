@@ -1,0 +1,5 @@
+mesos-dns (0.1~git20150222-1) trusty; urgency=low
+
+  * Initial Release.
+
+ -- Benjamin Staffin <ben@folsomlabs.com>  Sun, 22 Feb 2015 17:25:49 -0800

@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+#DH_VERBOSE = 1
+
+DPKG_EXPORT_BUILDFLAGS = 1
+include /usr/share/dpkg/default.mk
+
+DH_GOPKG = github.com/mesosphere/mesos-dns
+DH_GOLANG_INSTALL_ALL = 0
+
+# This is ineffective in trusty :(
+# dh-golang 1.6 makes excludes work in utopic and beyond.
+DH_GOLANG_EXCLUDES = mesos-dns\/tools
+
+export DH_GOPKG DH_GOLANG_INSTALL_ALL DH_GOLANG_EXCLUDES
+
+%:
+	dh $@ --buildsystem=golang
+
+override_dh_auto_install:
+	dh_auto_install
+	@# Ugh, this doesn't belong here. See above about dh-golang excludes.
+	rm -f debian/mesos-dns/usr/bin/tools

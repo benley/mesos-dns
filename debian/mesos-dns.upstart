@@ -1,0 +1,16 @@
+# vi:ft=upstart
+
+description "mesos-dns"
+
+start on runlevel [2345]
+stop on runlevel [!2345]
+
+respawn
+
+script
+  if [ -e /etc/mesos-dns/config.json ]; then
+    /usr/sbin/mesos-dns -config=/etc/mesos-dns/config.json
+  else
+    echo "No config file found; not starting mesos-dns."
+  fi
+end script
