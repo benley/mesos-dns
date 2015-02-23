@@ -27,7 +27,7 @@
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
 DESC="mesos-dns"
 NAME=mesos-dns
-DAEMON=/usr/sbin/mesos-dns
+DAEMON=/usr/bin/mesos-dns
 DAEMON_ARGS="-config=/etc/mesos-dns/config.json"
 PIDFILE=/var/run/$NAME.pid
 SCRIPTNAME=/etc/init.d/$NAME

@@ -9,7 +9,7 @@ respawn
 
 script
   if [ -e /etc/mesos-dns/config.json ]; then
-    /usr/sbin/mesos-dns -config=/etc/mesos-dns/config.json
+    /usr/bin/mesos-dns -config=/etc/mesos-dns/config.json
   else
     echo "No config file found; not starting mesos-dns."
   fi
