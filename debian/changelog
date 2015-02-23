@@ -1,3 +1,9 @@
+mesos-dns (0.1~git20150222-3) trusty; urgency=medium
+
+  * sysvinit bugfixes
+
+ -- Benjamin Staffin <ben@folsomlabs.com>  Mon, 23 Feb 2015 01:51:40 -0800
+
 mesos-dns (0.1~git20150222-2) trusty; urgency=medium
 
   * Fixed daemon startup in upstart and sysvinit scripts.
